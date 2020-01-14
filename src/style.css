@@ -1,16 +1,87 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:800|Roboto);
 
 body {
-  font-family: 'Roboto';
-  background-color: #f8f8f8;
-  color: #555;
-}
-
-.city {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  background-color: #f55c25;
+  font-family: sans;
+  font-size: 20px;
+  color: #222;
 }
 
-.icon {
-  width: 50px;
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.4m;
+}
+
+h3 {
+  font-size: 1.8em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+p, textarea, button {
+  font-size: 1em;
+  border-radius: 2px;
+}
+
+.game-window {
+  width: 600px;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  text-shadow:
+    1px 1px 0px #03ffdd,
+    2px 2px 0px #03ffdd,
+    3px 3px 0px #03ffdd,
+    4px 4px 0px #03ffdd,
+    -1px -1px 0px #ffb803,
+    -1px -2px 0px #ffb803,
+    -1px -3px 0px #ffb803,
+    -1px -4px 0px #ffb803;
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  background-color: #f8f8f8;
+  border: none;
+}
+
+textarea:disabled {
+  background-color: #e8e8e8;
+}
+
+button {
+  background-color: #ffb803;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  /* border-radius: 2px; */
+  box-shadow:
+    1px 1px 0px 0px #03ffdd,
+    2px 2px 0px #03ffdd;
+}
+
+button:active {
+  box-shadow: none;
+  position: relative;
+  top: 2px;
+  left: 2px;
+  text-decoration: none;
+}
+
+button:disabled {
+  background-color: #dbbe67;
+  cursor: not-allowed;
 }
