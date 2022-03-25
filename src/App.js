@@ -7,16 +7,25 @@ const App = () => {
 
   return (
     <div className="game-window">
-      <h1 className="title">TYPE YOUR LITTLE HEART OUT</h1>
+      <h1 className="title">type your little heart out</h1>
+      <p>a typing speed calculator.</p>
       <textarea
         value={text}
         ref={inputEl}
         onChange={handleInput}
         disabled={!timerOn}
-      />
-      <h4 className="info">Time remaining: {timeLeft}</h4>
-      <button onClick={startGame} disabled={activeGame}>START</button>
-      <h2>{timeLeft === 0 && `Words per minute: ${Math.floor(length * 3)}`}</h2>
+        />
+      <div>
+        {timeLeft === 0 && <h4>{Math.floor(length * 3)} words per minute</h4>}
+        {activeGame && timerOn && <h2 className="clock">{timeLeft}</h2>}
+        {!activeGame && timeLeft !== 0 &&
+          <div>
+            <p>click "start" and then get your fingers ready to type</p>
+            <button onClick={startGame} disabled={activeGame}>start</button>
+          </div>
+        }
+        {!activeGame && timeLeft === 0 && <button onClick={startGame} disabled={activeGame}>go again</button>}
+      </div>
     </div>
   )
 }

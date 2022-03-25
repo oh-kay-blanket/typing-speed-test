@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const useLogic = () => {
-  const STARTING_TIME = 20
+  const STARTING_TIME = 20;
 
   const [text, setText] = useState('')
   const [length, setLength] = useState(0)
@@ -23,13 +23,13 @@ const useLogic = () => {
 
   const startGame = () => {
     setActiveGame(true);
-    setCountdownTime(3);
+    setCountdownTime(5);
     setTimeLeft(STARTING_TIME);
     setTimeout(() => {
       setTimerOn(true);
       setText('');
       inputEl.current.focus();
-    }, 3000)
+    }, 5000)
   }
 
   const endGame = () => {
@@ -40,7 +40,7 @@ const useLogic = () => {
 
   useEffect(() => {
     if (countdownTime > 0) {
-      setText(`Begin typing in ${countdownTime}`);
+      setText(`${countdownTime}`);
       setTimeout(() => {
         setCountdownTime(prevTime => prevTime - 1)
       }, 1000)
